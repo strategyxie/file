@@ -79,6 +79,8 @@ e VNC_PASSWORD=xxxxxxxx \ ##访问密码，不然谁打开都能用了
 ## 实践
 在甲骨文AMD小鸡测试，可以安装并打开。但慢到不能使用。小内存的机子基本用不上。
 在甲骨文ARM上有良好的体验。适合在外需要翻墙浏览信息。
-'''
+
+    
 docker run -itd --restart=always --name=chrome -e USER_ID=0 -e GROUP_ID=0 -e TZ=Asia/Hong_Kong -e DISPLAY_WIDTH=1024 -e DISPLAY_HEIGHT=768 -e KEEP_APP_RUNNING=1 -e ENABLE_CJK_FONT=1 -e SECURE_CONNECTION=0 -e VNC_PASSWORD=litscorpi -p 5800:5800 -v /home/chrome_config:/config:rw --security-opt seccomp=unconfined --shm-size 500m langren1353/chrome-cn
-'''
+
+    
