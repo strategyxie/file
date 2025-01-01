@@ -62,19 +62,19 @@ docker run -itd \
     langren1353/chrome-cn
 
 参数解释
--e USER_ID=0 \ ## 用户，用于文件权限读写-默认即可
--e GROUP_ID=0 \ ## 组，用于文件权限读写-默认即可
--e TZ=Asia/Hong_Kong \ ##这个是设置地区-默认即可
--e DISPLAY_WIDTH=1920 \ ##设置显示的高宽
--e DISPLAY_HEIGHT=1080 \ ##设置显示的高宽
--e KEEP_APP_RUNNING=1 \ ##关闭了之后会自动重启，不然所有标签页关闭了，浏览器也就关了。
--e ENABLE_CJK_FONT=1 \ ##一定要加这个，不然中文显示乱码
--e SECURE_CONNECTION=1 \ ##启用 HTTPS，再绑定域名，安全一点点，不建议开启，开启后，初始化很慢
-e VNC_PASSWORD=xxxxxxxx \ ##访问密码，不然谁打开都能用了
--p 5800:5800 \ ##端口
--v /home/chrome_config:/config:rw \ ##数据，包括下载的东西、插件，不然不好找，重装可以继续用这个目录
---security-opt seccomp=/path/to/seccomp/profile.json \ ##配置文件默认情况下拒绝访问系统调用，不然网页会经常卡死崩溃，懒得弄的可以用 --security-opt seccomp=unconfined \，但是安全性差一些。
---shm-size 1500m \ ##内存使用，单位m或是g，建议是2g，但是500M的机器并不是不能试试看
+-e USER_ID=0 \ ## 用户，用于文件权限读写-默认即可  
+-e GROUP_ID=0 \ ## 组，用于文件权限读写-默认即可  
+-e TZ=Asia/Hong_Kong \ ##这个是设置地区-默认即可  
+-e DISPLAY_WIDTH=1920 \ ##设置显示的高宽  
+-e DISPLAY_HEIGHT=1080 \ ##设置显示的高宽  
+-e KEEP_APP_RUNNING=1 \ ##关闭了之后会自动重启，不然所有标签页关闭了，浏览器也就关了。  
+-e ENABLE_CJK_FONT=1 \ ##一定要加这个，不然中文显示乱码  
+-e SECURE_CONNECTION=1 \ ##启用 HTTPS，再绑定域名，安全一点点，不建议开启，开启后，初始化很慢  
+e VNC_PASSWORD=xxxxxxxx \ ##访问密码，不然谁打开都能用了  
+-p 5800:5800 \ ##端口  
+-v /home/chrome_config:/config:rw \ ##数据，包括下载的东西、插件，不然不好找，重装可以继续用这个目录  
+--security-opt seccomp=/path/to/seccomp/profile.json \ ##配置文件默认情况下拒绝访问系统调用，不然网页会经常卡死崩溃，懒得弄的可以用 --security-opt seccomp=unconfined \，但是安全性差一些。   
+--shm-size 1500m \ ##内存使用，单位m或是g，建议是2g，但是500M的机器并不是不能试试看    
 
 ## 实践
 在甲骨文AMD小鸡测试，可以安装并打开。但慢到不能使用。小内存的机子基本用不上。
